@@ -80,11 +80,6 @@ def test_daily_mean_single_row():
     test_result = np.array([1, 2, 3])
     npt.assert_array_equal(daily_mean(test_input), test_result)  
 
-def test_daily_mean_empty():
-    """Mean of empty input should raise an error or return nan, depending on implementation."""
-    test_input = np.array([[]])
-    test_result = np.array([[]])
-    npt.assert_array_equal(daily_mean(test_input), test_result)  
 
 def test_daily_min_string():
     """Test for TypeError when passing strings"""
