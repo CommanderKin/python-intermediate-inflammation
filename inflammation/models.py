@@ -9,8 +9,12 @@ and each column represents a single day across all patients.
 
 import numpy as np
 
+<<<<<<< HEAD
 
 def load_csv(filename):
+=======
+def load_csv(filename):  
+>>>>>>> feature-std-dev
     """Load a Numpy array from a CSV
 
     :param filename: Filename of CSV to load
@@ -43,3 +47,14 @@ def daily_min(data):
     
     """
     return np.min(data, axis=0)
+
+
+def s_dev(data):
+    """Computes and returns standard deviation for data."""
+    mmm = np.mean(data, axis=0)
+    devs = []
+    for entry in data:
+        devs.append((entry - mmm) * (entry - mmm))
+
+    s_dev2 = sum(devs) / len(data)
+    return np.std(data, axis=0)
